@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Ejercicio1</string>
+    <string name="app_name">CalcForms</string>
+    <string name="encabezado">Cómputo Móvil</string>
+    <string name="seleccione">Seleccione una fórmula.</string>
+    <string name="botoncalc">Calcular</string>
+    <string name="string_chicharronera">Fórmula General</string>
+    <string name="area_triangulo">Área Triángulo</string>
+    <string name="velocidad">Velocidad</string>
+    <string name="perimetro_rectangulo">Perímetro de un Rectángulo</string>
+
+
 </resources>

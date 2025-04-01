@@ -7,6 +7,9 @@
     <string name="area_triangulo">Área Triángulo</string>
     <string name="velocidad">Velocidad</string>
     <string name="perimetro_rectangulo">Perímetro de un Rectángulo</string>
+    <string name="adospuntos">a:</string>
+    <string name="bdospuntos">b:</string>
+    <string name="cdospuntos">c:</string>
 
 
 </resources>

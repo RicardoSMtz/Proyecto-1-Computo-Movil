@@ -10,6 +10,29 @@
     <string name="adospuntos">a:</string>
     <string name="bdospuntos">b:</string>
     <string name="cdospuntos">c:</string>
+    <string name="hdospuntos">h:</string>
+    <string name="ddospuntos">d:</string>
+    <string name="tdospuntos">t:</string>
+    <string name="ele1">l1:</string>
+    <string name="ele2">l2:</string>
+    <string name="requierenum">Se requiere un número.</string>
+    <string name="difcero">Debe ser diferente de 0</string>
+    <string name="solucionesreales">No existen soluciones reales.</string>
+    <string name="coeficientea">Coeficiente a</string>
+    <string name="coeficienteb">Coeficiente b</string>
+    <string name="coeficientec">Coeficiente c</string>
+    <string name="basee">Base</string>
+    <string name="alturaa">Altura</string>
+    <string name="distanciaa">Distancia</string>
+    <string name="tiempoo">Tiempo</string>
+    <string name="lado1">Lado 1</string>
+    <string name="lado2">Lado 2</string>
+    <string name="displayarea">Área: %.2f [m^2]</string>
+    <string name="displayVelocidad">Velocidad: %.2f [m/s]</string>
+    <string name="displayPerimetro">Perímetro: %d [m]</string>
+    <string name="displayChicarronera">Raíz 1: %1$.2f, Raíz 2: %2$.2f</string>
+
+
 
 
 </resources>

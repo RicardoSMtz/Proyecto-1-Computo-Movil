@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CalcForms</string>
+    <string name="encabezado">Mobile Computing</string>
+    <string name="seleccione">Choose a formula</string>
+    <string name="botoncalc">Check</string>
+    <string name="string_chicharronera">Quadratic Formula</string>
+    <string name="area_triangulo">Triangle Area</string>
+    <string name="velocidad">Velocity</string>
+    <string name="perimetro_rectangulo">Rectangle Perimeter</string>
+    <string name="adospuntos">a:</string>
+    <string name="bdospuntos">b:</string>
+    <string name="cdospuntos">c:</string>
+    <string name="hdospuntos">h:</string>
+    <string name="ddospuntos">d:</string>
+    <string name="tdospuntos">t:</string>
+    <string name="ele2">l2:</string>
+    <string name="requierenum">Please enter a number.</string>
+    <string name="difcero">Must be different from 0</string>
+    <string name="solucionesreales">" No real solutions exist."</string>
+    <string name="coeficientea">" Coefficient a"</string>
+    <string name="coeficienteb">Coefficient b</string>
+    <string name="coeficientec">Coefficient c</string>
+    <string name="basee">Base</string>
+    <string name="alturaa">Height</string>
+    <string name="distanciaa">Distance</string>
+    <string name="tiempoo">Time</string>
+    <string name="lado1">Side 1</string>
+    <string name="lado2">Side 2</string>
+    <string name="displayarea">Area: %.2f [m^2]</string>
+    <string name="displayVelocidad">Velocity: %.2f [m/s]</string>
+    <string name="displayPerimetro">Perimeter: %d [m]</string>
+    <string name="displayChicarronera">Root 1: %1$.2f, Root 2: %2$.2f</string>
+    <string name="ele1">l1:</string>
+</resources>

@@ -143,7 +143,7 @@ class MainActivity : AppCompatActivity() {
 
         // Validar Var1
         if (binding.Var1.visibility == View.VISIBLE && binding.Var1.text.toString().isEmpty()) {
-            binding.Var1.error = "Se requiere un número"
+            binding.Var1.error = "Se requiere un número "
             binding.Var1.requestFocus()
             valido = false
         } else if (binding.Var1.visibility == View.VISIBLE && binding.Var1.text.toString().toIntOrNull() == 0) {

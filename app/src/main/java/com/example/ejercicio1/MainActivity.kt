@@ -2,7 +2,9 @@ package com.example.ejercicio1
 
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.text.Editable
 import android.text.InputType
+import android.text.TextWatcher
 import android.text.method.DigitsKeyListener
 import android.view.View
 import android.widget.AdapterView
@@ -58,44 +60,58 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnCalcular.setOnClickListener {
-            val seleccion = binding.spinner4.selectedItem.toString()
+            if (binding.btnCalcular.text == getString(R.string.reiniciar)) {
+                // Limpiar los campos
+                binding.Var1.text.clear()
+                binding.Var2.text.clear()
+                binding.Var3.text.clear()
+                binding.tvResult.text = getString(R.string.clear)
 
-            when (seleccion) {
-                getString(R.string.string_chicharronera) -> {
-                    if (validarCamposVacios(3)) {
-                        val a = binding.Var1.text.toString().toInt()
-                        val b = binding.Var2.text.toString().toInt()
-                        val c = binding.Var3.text.toString().toInt()
-                        val resultado = formGeneral(a, b, c)
-                        binding.tvResult.text = resultado
+                // Restaurar el texto del botón
+                binding.btnCalcular.text = getString(R.string.botoncalc)
+            } else {
+                val seleccion = binding.spinner4.selectedItem.toString()
+                when (seleccion) {
+                    getString(R.string.string_chicharronera) -> {
+                        if (validarCamposVacios(3)) {
+                            val a = binding.Var1.text.toString().toInt()
+                            val b = binding.Var2.text.toString().toInt()
+                            val c = binding.Var3.text.toString().toInt()
+                            val resultado = formGeneral(a, b, c)
+                            binding.tvResult.text = resultado
+                            binding.btnCalcular.text = getString(R.string.reiniciar)
+                        }
                     }
-                }
-                getString(R.string.area_triangulo) -> {
-                    if (validarCamposVacios(2)) {
-                        val base = binding.Var1.text.toString().toInt()
-                        val altura = binding.Var2.text.toString().toInt()
-                        val resultado = areaTriangulo(base, altura)
-                        binding.tvResult.text = getString(R.string.displayarea, resultado)
-                    }
-                }
-                getString(R.string.velocidad) -> {
-                    if (validarCamposVacios(2)) {
-                        val distancia = binding.Var1.text.toString().toInt()
-                        val tiempo = binding.Var2.text.toString().toInt()
-                        val resultado = calcularVelocidad(distancia, tiempo)
-                        binding.tvResult.text = getString(R.string.displayVelocidad, resultado)
-                    }
-                }
-                getString(R.string.perimetro_rectangulo) -> {
-                    if (validarCamposVacios(2)) {
-                        val lado1 = binding.Var1.text.toString().toInt()
-                        val lado2 = binding.Var2.text.toString().toInt()
-                        val resultado = perimetroRectangulo(lado1, lado2)
-                        binding.tvResult.text = getString(R.string.displayPerimetro, resultado)
-                    }
-                }
-            }
+                    getString(R.string.area_triangulo) -> {
+                        if (validarCamposVacios(2)) {
+                            val base = binding.Var1.text.toString().toInt()
+                            val altura = binding.Var2.text.toString().toInt()
+                            val resultado = areaTriangulo(base, altura)
+                            binding.tvResult.text = getString(R.string.displayarea, resultado)
+                            binding.btnCalcular.text = getString(R.string.reiniciar)
+
+                         } }
+                    getString(R.string.velocidad) -> {
+                        if (validarCamposVacios(2)) {
+                            val distancia = binding.Var1.text.toString().toInt()
+                            val tiempo = binding.Var2.text.toString().toInt()
+                            val resultado = calcularVelocidad(distancia, tiempo)
+                            binding.tvResult.text = getString(R.string.displayVelocidad, resultado)
+                            binding.btnCalcular.text = getString(R.string.reiniciar)
+                         }
+                            }
+                    getString(R.string.perimetro_rectangulo) -> {
+                        if (validarCamposVacios(2)) {
+                            val lado1 = binding.Var1.text.toString().toInt()
+                            val lado2 = binding.Var2.text.toString().toInt()
+                            val resultado = perimetroRectangulo(lado1, lado2)
+                            binding.tvResult.text = getString(R.string.displayPerimetro, resultado)
+                            binding.btnCalcular.text = getString(R.string.reiniciar)
+                         }
+                        }
+                 } }
         }
+
     }
 
     private fun mostrarCampos(position: Int) {
@@ -126,7 +142,7 @@ class MainActivity : AppCompatActivity() {
                 binding.b.text = getString(R.string.hdospuntos)
                 binding.Var3.visibility = View.INVISIBLE
                 binding.c.visibility = View.INVISIBLE
-                binding.Var3.isEnabled = false // Deshabilitar Var3 ya que no es necesario
+                binding.Var3.isEnabled = false // Deshabilitar Var3 ya que no es necesaria
                 binding.gif.visibility = View.INVISIBLE
                 binding.gif3.visibility = View.VISIBLE
                 binding.gif2.visibility = View.INVISIBLE
@@ -143,7 +159,7 @@ class MainActivity : AppCompatActivity() {
                 binding.gif.visibility = View.INVISIBLE
                 binding.gif2.visibility = View.VISIBLE
                 binding.gif3.visibility = View.INVISIBLE
-                binding.Var3.isEnabled = false // Deshabilitar Var3 ya que no es necesario
+                binding.Var3.isEnabled = false // Deshabilitar Var3 ya que no es necesaria
             }
             3 -> { // Perímetro del rectángulo
                 binding.Var1.inputType = InputType.TYPE_CLASS_NUMBER
@@ -157,10 +173,11 @@ class MainActivity : AppCompatActivity() {
                 binding.gif.visibility = View.VISIBLE
                 binding.gif2.visibility = View.INVISIBLE
                 binding.gif3.visibility = View.INVISIBLE
-                binding.Var3.isEnabled = false // Deshabilitar Var3 ya que no es necesario
+                binding.Var3.isEnabled = false // Deshabilitar Var3 ya que no es necesaria
              }
          }
      }
+
     private fun validarCamposVacios(numCampos: Int): Boolean {
         var valido = true
 
@@ -197,8 +214,8 @@ class MainActivity : AppCompatActivity() {
             valido = false
          }
         return valido
-    }
 
+    }
 
     //Función para calcular fórmula general
     private fun formGeneral(a: Int, b: Int, c: Int): String {

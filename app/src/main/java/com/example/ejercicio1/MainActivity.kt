@@ -2,10 +2,13 @@ package com.example.ejercicio1
 
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.text.InputType
+import android.text.method.DigitsKeyListener
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Toast.makeText(this, getString(R.string.bienvenido), Toast.LENGTH_SHORT).show()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -98,6 +102,8 @@ class MainActivity : AppCompatActivity() {
 
         when (position) {
             0 -> { // Fórmula general
+                binding.Var1.inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_SIGNED
+                binding.Var2.inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_SIGNED
                 binding.Var1.hint = getString(R.string.coeficientea)
                 binding.Var2.hint = getString(R.string.coeficienteb)
                 binding.Var3.hint = getString(R.string.coeficientec)
@@ -105,9 +111,14 @@ class MainActivity : AppCompatActivity() {
                 binding.b.text = getString(R.string.bdospuntos)
                 binding.Var3.visibility = View.VISIBLE
                 binding.c.visibility = View.VISIBLE
-                binding.Var3.isEnabled = true // Deshabilitar Var3 ya que no es necesario
+                binding.Var3.isEnabled = true // habilitar Var3 ya que es necesario al volver
+                binding.gif.visibility = View.INVISIBLE
+                binding.gif2.visibility = View.INVISIBLE
+                binding.gif3.visibility = View.INVISIBLE
             }
             1 -> { // Área del triángulo
+                binding.Var1.inputType = InputType.TYPE_CLASS_NUMBER
+                binding.Var2.inputType = InputType.TYPE_CLASS_NUMBER
                 binding.Var1.hint = getString(R.string.basee)
                 binding.Var2.hint = getString(R.string.alturaa)
                 binding.a.text = getString(R.string.bdospuntos)
@@ -115,23 +126,36 @@ class MainActivity : AppCompatActivity() {
                 binding.Var3.visibility = View.INVISIBLE
                 binding.c.visibility = View.INVISIBLE
                 binding.Var3.isEnabled = false // Deshabilitar Var3 ya que no es necesario
+                binding.gif.visibility = View.INVISIBLE
+                binding.gif3.visibility = View.VISIBLE
+                binding.gif2.visibility = View.INVISIBLE
             }
             2 -> { // Velocidad
+                binding.Var1.inputType = InputType.TYPE_CLASS_NUMBER
+                binding.Var2.inputType = InputType.TYPE_CLASS_NUMBER
                 binding.Var1.hint = getString(R.string.distanciaa)
                 binding.Var2.hint = getString(R.string.tiempoo) //Tiempo
                 binding.a.text = getString(R.string.ddospuntos) //d
                 binding.b.text = getString(R.string.tdospuntos)//t
                 binding.Var3.visibility = View.INVISIBLE
                 binding.c.visibility = View.INVISIBLE
+                binding.gif.visibility = View.INVISIBLE
+                binding.gif2.visibility = View.VISIBLE
+                binding.gif3.visibility = View.INVISIBLE
                 binding.Var3.isEnabled = false // Deshabilitar Var3 ya que no es necesario
             }
             3 -> { // Perímetro del rectángulo
+                binding.Var1.inputType = InputType.TYPE_CLASS_NUMBER
+                binding.Var2.inputType = InputType.TYPE_CLASS_NUMBER
                 binding.Var1.hint = getString(R.string.lado1) //L1
                 binding.Var2.hint = getString(R.string.lado2) //L2
                 binding.a.text = getString(R.string.ele1)//"l1:"
                 binding.b.text = getString(R.string.ele2)//"l2:"
                 binding.Var3.visibility = View.INVISIBLE
                 binding.c.visibility = View.INVISIBLE
+                binding.gif.visibility = View.VISIBLE
+                binding.gif2.visibility = View.INVISIBLE
+                binding.gif3.visibility = View.INVISIBLE
                 binding.Var3.isEnabled = false // Deshabilitar Var3 ya que no es necesario
              }
          }
@@ -140,7 +164,7 @@ class MainActivity : AppCompatActivity() {
         var valido = true
 
         // Validar Var1
-        if (binding.Var1.visibility == View.VISIBLE && binding.Var1.text.toString().isEmpty()) {
+        if (binding.Var1.visibility == View.VISIBLE && (binding.Var1.text.toString().isEmpty()) || binding.Var1.text.toString() == getString(R.string.menos) ) {
             binding.Var1.error = getString(R.string.requierenum)
             binding.Var1.requestFocus()
             valido = false
@@ -151,7 +175,7 @@ class MainActivity : AppCompatActivity() {
          }
 
         // Validar Var2
-        if (binding.Var2.visibility == View.VISIBLE && binding.Var2.text.toString().isEmpty()) {
+        if (binding.Var2.visibility == View.VISIBLE && (binding.Var2.text.toString().isEmpty() || binding.Var2.text.toString() == getString(R.string.menos) )) {
             binding.Var2.error = getString(R.string.requierenum)
             binding.Var2.requestFocus()
             valido = false
@@ -162,7 +186,7 @@ class MainActivity : AppCompatActivity() {
          }
 
         // Validar Var3
-        if (numCampos == 3 && binding.Var3.visibility == View.VISIBLE && binding.Var3.text.toString().isEmpty()) {
+        if (numCampos == 3 && binding.Var3.visibility == View.VISIBLE && (binding.Var3.text.toString().isEmpty() || binding.Var3.text.toString() == getString(R.string.menos)) ) {
             binding.Var3.error = getString(R.string.requierenum)
             binding.Var3.requestFocus()
             valido = false
@@ -172,7 +196,6 @@ class MainActivity : AppCompatActivity() {
             valido = false
          }
         return valido
-
     }
 
 

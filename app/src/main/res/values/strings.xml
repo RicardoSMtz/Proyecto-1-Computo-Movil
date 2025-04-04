@@ -27,11 +27,12 @@
     <string name="tiempoo">Tiempo</string>
     <string name="lado1">Lado 1</string>
     <string name="lado2">Lado 2</string>
+    <string name="menos">-</string>
+    <string name="bienvenido">¡Bienvenido!</string>
     <string name="displayarea">Área: %.2f [m^2]</string>
     <string name="displayVelocidad">Velocidad: %.2f [m/s]</string>
     <string name="displayPerimetro">Perímetro: %d [m]</string>
     <string name="displayChicarronera">Raíz 1: %1$.2f, Raíz 2: %2$.2f</string>
-
 
 
 

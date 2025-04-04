@@ -27,6 +27,8 @@
     <string name="tiempoo">Time</string>
     <string name="lado1">Side 1</string>
     <string name="lado2">Side 2</string>
+    <string name="menos">-</string>
+    <string name="bienvenido">¡Welcome!</string>
     <string name="displayarea">Area: %.2f [m^2]</string>
     <string name="displayVelocidad">Velocity: %.2f [m/s]</string>
     <string name="displayPerimetro">Perimeter: %d [m]</string>

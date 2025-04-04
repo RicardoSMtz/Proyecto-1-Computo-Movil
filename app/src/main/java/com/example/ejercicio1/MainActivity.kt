@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                     2 -> R.drawable.velocidad
                     3 -> R.drawable.perimetro
                     else -> R.drawable.chicharronera
+
                 }
                 binding.imgformula.setImageResource(imageResource)
                 mostrarCampos(position)

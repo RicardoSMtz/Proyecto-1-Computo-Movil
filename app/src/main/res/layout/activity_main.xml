@@ -44,14 +44,14 @@
         android:id="@+id/logo"
         android:layout_width="114dp"
         android:layout_height="102dp"
-        android:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.047"
-        app:srcCompat="@drawable/log" />
+        app:srcCompat="@drawable/log"
+        app:tint="@color/white" />
 
 
     <ImageView
@@ -283,11 +283,11 @@
         android:id="@+id/ivMenuSpinner"
         android:layout_width="63dp"
         android:layout_height="45dp"
-        android:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/spinner4"
         app:layout_constraintEnd_toEndOf="@+id/spinner4"
         app:layout_constraintTop_toTopOf="@+id/spinner4"
-        app:srcCompat="@drawable/formula" />
+        app:srcCompat="@drawable/formula"
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/tvResult"

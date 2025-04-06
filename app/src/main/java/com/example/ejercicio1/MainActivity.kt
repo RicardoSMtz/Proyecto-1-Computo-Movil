@@ -60,57 +60,45 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnCalcular.setOnClickListener {
-            if (binding.btnCalcular.text == getString(R.string.reiniciar)) {
-                // Limpiar los campos
-                binding.Var1.text.clear()
-                binding.Var2.text.clear()
-                binding.Var3.text.clear()
-                binding.tvResult.text = getString(R.string.clear)
+            val seleccion = binding.spinner4.selectedItem.toString()
 
-                // Restaurar el texto del botón
-                binding.btnCalcular.text = getString(R.string.botoncalc)
-            } else {
-                val seleccion = binding.spinner4.selectedItem.toString()
-                when (seleccion) {
-                    getString(R.string.string_chicharronera) -> {
-                        if (validarCamposVacios(3)) {
-                            val a = binding.Var1.text.toString().toInt()
-                            val b = binding.Var2.text.toString().toInt()
-                            val c = binding.Var3.text.toString().toInt()
-                            val resultado = formGeneral(a, b, c)
-                            binding.tvResult.text = resultado
-                            binding.btnCalcular.text = getString(R.string.reiniciar)
-                        }
+            when (seleccion) {
+                getString(R.string.string_chicharronera) -> {
+                    if (validarCamposVacios(3)) {
+                        val a = binding.Var1.text.toString().toInt()
+                        val b = binding.Var2.text.toString().toInt()
+                        val c = binding.Var3.text.toString().toInt()
+                        val resultado = formGeneral(a, b, c)
+                        binding.tvResult.text = resultado
                     }
-                    getString(R.string.area_triangulo) -> {
-                        if (validarCamposVacios(2)) {
-                            val base = binding.Var1.text.toString().toInt()
-                            val altura = binding.Var2.text.toString().toInt()
-                            val resultado = areaTriangulo(base, altura)
-                            binding.tvResult.text = getString(R.string.displayarea, resultado)
-                            binding.btnCalcular.text = getString(R.string.reiniciar)
-
-                         } }
-                    getString(R.string.velocidad) -> {
-                        if (validarCamposVacios(2)) {
-                            val distancia = binding.Var1.text.toString().toInt()
-                            val tiempo = binding.Var2.text.toString().toInt()
-                            val resultado = calcularVelocidad(distancia, tiempo)
-                            binding.tvResult.text = getString(R.string.displayVelocidad, resultado)
-                            binding.btnCalcular.text = getString(R.string.reiniciar)
-                         }
-                            }
-                    getString(R.string.perimetro_rectangulo) -> {
-                        if (validarCamposVacios(2)) {
-                            val lado1 = binding.Var1.text.toString().toInt()
-                            val lado2 = binding.Var2.text.toString().toInt()
-                            val resultado = perimetroRectangulo(lado1, lado2)
-                            binding.tvResult.text = getString(R.string.displayPerimetro, resultado)
-                            binding.btnCalcular.text = getString(R.string.reiniciar)
-                         }
-                        }
-                 } }
+                }
+                getString(R.string.area_triangulo) -> {
+                    if (validarCamposVacios(2)) {
+                        val base = binding.Var1.text.toString().toInt()
+                        val altura = binding.Var2.text.toString().toInt()
+                        val resultado = areaTriangulo(base, altura)
+                        binding.tvResult.text = getString(R.string.displayarea, resultado)
+                    }
+                }
+                getString(R.string.velocidad) -> {
+                    if (validarCamposVacios(2)) {
+                        val distancia = binding.Var1.text.toString().toInt()
+                        val tiempo = binding.Var2.text.toString().toInt()
+                        val resultado = calcularVelocidad(distancia, tiempo)
+                        binding.tvResult.text = getString(R.string.displayVelocidad, resultado)
+                    }
+                }
+                getString(R.string.perimetro_rectangulo) -> {
+                    if (validarCamposVacios(2)) {
+                        val lado1 = binding.Var1.text.toString().toInt()
+                        val lado2 = binding.Var2.text.toString().toInt()
+                        val resultado = perimetroRectangulo(lado1, lado2)
+                        binding.tvResult.text = getString(R.string.displayPerimetro, resultado)
+                    }
+                }
+            }
         }
+
 
     }
 
@@ -132,6 +120,10 @@ class MainActivity : AppCompatActivity() {
                 binding.gif.visibility = View.INVISIBLE
                 binding.gif2.visibility = View.INVISIBLE
                 binding.gif3.visibility = View.INVISIBLE
+                binding.Var1.text.clear()
+                binding.Var2.text.clear()
+                binding.Var3.text.clear()
+                binding.tvResult.text = getString(R.string.clear)
             }
             1 -> { // Área del triángulo
                 binding.Var1.inputType = InputType.TYPE_CLASS_NUMBER
@@ -146,6 +138,9 @@ class MainActivity : AppCompatActivity() {
                 binding.gif.visibility = View.INVISIBLE
                 binding.gif3.visibility = View.VISIBLE
                 binding.gif2.visibility = View.INVISIBLE
+                binding.Var1.text.clear()
+                binding.Var2.text.clear()
+                binding.tvResult.text = getString(R.string.clear)
             }
             2 -> { // Velocidad
                 binding.Var1.inputType = InputType.TYPE_CLASS_NUMBER
@@ -160,6 +155,9 @@ class MainActivity : AppCompatActivity() {
                 binding.gif2.visibility = View.VISIBLE
                 binding.gif3.visibility = View.INVISIBLE
                 binding.Var3.isEnabled = false // Deshabilitar Var3 ya que no es necesaria
+                binding.Var1.text.clear()
+                binding.Var2.text.clear()
+                binding.tvResult.text = getString(R.string.clear)
             }
             3 -> { // Perímetro del rectángulo
                 binding.Var1.inputType = InputType.TYPE_CLASS_NUMBER
@@ -174,6 +172,9 @@ class MainActivity : AppCompatActivity() {
                 binding.gif2.visibility = View.INVISIBLE
                 binding.gif3.visibility = View.INVISIBLE
                 binding.Var3.isEnabled = false // Deshabilitar Var3 ya que no es necesaria
+                binding.Var1.text.clear()
+                binding.Var2.text.clear()
+                binding.tvResult.text = getString(R.string.clear)
              }
          }
      }

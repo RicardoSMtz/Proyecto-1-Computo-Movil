@@ -28,7 +28,6 @@
     <string name="lado1">Lado 1 [m]</string>
     <string name="lado2">Lado 2 [m]</string>
     <string name="menos">-</string>
-    <string name="reiniciar">Reiniciar</string>
     <string name="clear" />
     <string name="bienvenido">¡Bienvenido!</string>
     <string name="displayarea">Área: %.2f [m²]</string>

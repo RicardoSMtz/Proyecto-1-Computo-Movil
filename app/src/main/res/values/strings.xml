@@ -16,7 +16,7 @@
     <string name="ele1">l1:</string>
     <string name="ele2">l2:</string>
     <string name="requierenum">Se requiere un número.</string>
-    <string name="difcero">Debe ser diferente de 0</string>
+    <string name="difcero">Debe ser diferente de 0.</string>
     <string name="solucionesreales">No existen soluciones reales.</string>
     <string name="coeficientea">Coeficiente a</string>
     <string name="coeficienteb">Coeficiente b</string>

@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">CalcForms</string>
     <string name="encabezado">Mobile Computing</string>
-    <string name="seleccione">Choose a formula</string>
+    <string name="seleccione">Choose a formula.</string>
     <string name="botoncalc">Check</string>
     <string name="string_chicharronera">Quadratic Formula</string>
     <string name="area_triangulo">Triangle Area</string>
@@ -16,7 +16,7 @@
     <string name="tdospuntos">t:</string>
     <string name="ele2">l2:</string>
     <string name="requierenum">Please enter a number.</string>
-    <string name="difcero">Must be different from 0</string>
+    <string name="difcero">Must be different from 0.</string>
     <string name="solucionesreales">" No real solutions exist."</string>
     <string name="coeficientea">" Coefficient a"</string>
     <string name="coeficienteb">Coefficient b</string>
@@ -28,12 +28,11 @@
     <string name="lado1">Side 1 [m]</string>
     <string name="lado2">Side 2 [m]</string>
     <string name="menos">-</string>
-    <string name="reiniciar">Restart</string>
     <string name="clear">"‎ "</string>
     <string name="bienvenido">¡Welcome!</string>
     <string name="displayarea">Area: %.2f [m²]</string>
     <string name="displayVelocidad">Velocity: %.2f [m/s]</string>
     <string name="displayPerimetro">Perimeter: %d [m]</string>
     <string name="displayChicarronera">Root 1: %1$.2f, Root 2: %2$.2f</string>
-    <string name="ele1">l1:</string>
+    <string name="ele1">s1:</string>
 </resources>

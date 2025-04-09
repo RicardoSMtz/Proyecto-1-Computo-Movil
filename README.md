@@ -15,7 +15,6 @@ This app is a formula calculator that allows users to select one of four predefi
 - **User-friendly UI** with visual representations of formulas
 - **Calculation results** shown after data is entered and validated
 - **Multilingual support**: English and Spanish
-- **Custom app icon**
 - **Minimum API level**: 26
 
 ## 📋 Example Formulas (User-Defined)
@@ -34,14 +33,14 @@ The app includes input checks and shows error messages if:
 ## 🌍 Language Support
 
 This application supports:
-- **English**
+- **English (USA)**
 - **Spanish**
 
 All textual content is loaded from resource files; **no hardcoded strings** are used.
 
 ## 🎯 Purpose
 
-The main objective of this project is to apply core Android development concepts, including UI design, user interaction handling, localization, and validation logic.
+The main objective of this project is to apply core Android development concepts, including UI design, user interaction handling, and validation logic.
 
 ---
 

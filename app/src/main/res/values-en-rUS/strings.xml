@@ -14,7 +14,7 @@
     <string name="hdospuntos">h:</string>
     <string name="ddospuntos">d:</string>
     <string name="tdospuntos">t:</string>
-    <string name="ele2">l2:</string>
+    <string name="ele2">S₂:</string>
     <string name="requierenum">Please enter a number.</string>
     <string name="difcero">Must be different from 0.</string>
     <string name="solucionesreales">" No real solutions exist."</string>
@@ -34,5 +34,5 @@
     <string name="displayVelocidad">Velocity: %.2f [m/s]</string>
     <string name="displayPerimetro">Perimeter: %d [m]</string>
     <string name="displayChicarronera">Root 1: %1$.2f, Root 2: %2$.2f</string>
-    <string name="ele1">s1:</string>
+    <string name="ele1">S₁:</string>
 </resources>

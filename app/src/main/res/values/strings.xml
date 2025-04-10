@@ -13,8 +13,8 @@
     <string name="hdospuntos">h:</string>
     <string name="ddospuntos">d:</string>
     <string name="tdospuntos">t:</string>
-    <string name="ele1">l1:</string>
-    <string name="ele2">l2:</string>
+    <string name="ele1">L₁:</string>
+    <string name="ele2">L₂:</string>
     <string name="requierenum">Se requiere un número.</string>
     <string name="difcero">Debe ser diferente de 0.</string>
     <string name="solucionesreales">No existen soluciones reales.</string>

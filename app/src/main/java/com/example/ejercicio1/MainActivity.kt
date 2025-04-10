@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
-
+        //Lógica para ejecutar las operaciones según sea el caso.
         binding.btnCalcular.setOnClickListener {
             val seleccion = binding.spinner4.selectedItem.toString()
 
@@ -101,7 +101,8 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
+    //Función que despliega los campos visibles, asi como la limpieza de cajas y en general lo que el usuario observa al
+    //seleccionar una opción.
     private fun mostrarCampos(position: Int) {
         binding.LayoutChicarronera.visibility = View.VISIBLE
 
@@ -178,7 +179,7 @@ class MainActivity : AppCompatActivity() {
              }
          }
      }
-
+    //Función que valida los datos ingresados por el usuario.
     private fun validarCamposVacios(numCampos: Int): Boolean {
         var valido = true
 
